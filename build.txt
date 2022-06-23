@@ -1,3 +1,4 @@
 displayName = No Dust
 author = fizkay
 version = 0.1
+homepage = https://github.com/miintTeaa/no_dust/tree/master

@@ -1,4 +1,4 @@
-# no_dust
+# No Dust
 Mod for terraria to reduce dust-based visual clutter.
 
 Includes a single setting, where you can enable or disable this functionality without having to reload anything.

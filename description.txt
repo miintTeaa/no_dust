@@ -7,3 +7,6 @@ This mod uses IL editing, so it might have compatibility issues with other mods 
 Planned functionality:
 Whitelist/Blacklist for certain dust types
 Allow user to only cull a certain percentage of dust
+
+Changelog:
+Updated icon

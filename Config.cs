@@ -11,6 +11,10 @@ namespace NoDust {
     public class NoDustConfig : ModConfig {
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
+        [Label("Enable dust reduction")]
+        [DefaultValue(true)]
+        public bool Enabled;
+
         [Label("Dust reduction percent")]
         [DefaultValue(100)]
         [Range(0, 100)]

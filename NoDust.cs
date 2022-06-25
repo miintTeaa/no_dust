@@ -23,7 +23,7 @@ namespace NoDust
 			// Pushes value of config on the stack
 			c.EmitDelegate<Func<int, bool>>((dust_id) => {
 				var config = ModContent.GetInstance<NoDustConfig>();
-				var should_destroy = Main.rand.NextFloat() * 100 > config.DustDestroyChance;
+				var should_destroy = Main.rand.NextFloat() * 100 <= config.DustDestroyChance;
 
 				if (config.ListSetting == ListConfigSettings.Whitelist && config.DustList.Contains(dust_id)) {
 					should_destroy = false;

@@ -1,7 +1,13 @@
 using Terraria.ModLoader.Config;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace NoDust {
+    public enum ListConfigSettings { 
+        Whitelist,
+        Blacklist,
+        Off
+    }
     public class NoDustConfig : ModConfig {
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
@@ -11,5 +17,14 @@ namespace NoDust {
         [Increment(1)]
         [Slider]
         public int DustDestroyChance;
+
+        [Label("Print last dust")]
+        public bool PrintLastDust;
+
+        [Label("List type")]
+        public ListConfigSettings ListSetting;
+
+        [Label("Dust list")]
+        public HashSet<int> DustList;
     }
 }

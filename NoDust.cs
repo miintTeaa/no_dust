@@ -17,10 +17,25 @@ namespace NoDust
 			var if_end = c.DefineLabel();
 			var if_start = c.DefineLabel();
 
-			//Pushes value of config on the stack
-			c.EmitDelegate<Func<bool>>(() => {
+			// Loads dust type onto the stack
+			c.Emit(OpCodes.Ldarg_3);
+
+			// Pushes value of config on the stack
+			c.EmitDelegate<Func<int, bool>>((dust_id) => {
 				var config = ModContent.GetInstance<NoDustConfig>();
 				var should_destroy = Main.rand.NextFloat() * 100 > config.DustDestroyChance;
+
+				if (config.ListSetting == ListConfigSettings.Whitelist && config.DustList.Contains(dust_id)) {
+					should_destroy = false;
+				}
+				else if (config.ListSetting == ListConfigSettings.Blacklist && !config.DustList.Contains(dust_id)) {
+					should_destroy = false;
+				}
+
+				if (!should_destroy && config.PrintLastDust) {
+					Main.NewText("Last generated dust id:" + dust_id);
+				}
+
 				return should_destroy;
 			});
 

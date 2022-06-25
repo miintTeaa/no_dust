@@ -1,12 +1,12 @@
-Turns off dust.
+Lets you reduce dust.
 
-Includes a single setting, where you can enable or disable this functionality without having to reload anything.
+Provides a config setting for the percentage of dust erased, and a whitelist/blacklist for dust types.
 
 This mod uses IL editing, so it might have compatibility issues with other mods that edit Terraria.Dust.NewDust (if you don't have any issues, don't worry about it).
 
 Planned functionality:
-Whitelist/Blacklist for certain dust types
-Allow user to only cull a certain percentage of dust
+Improved UI
 
 Changelog:
-Updated icon
+Added Whitelist/Blacklist for certain dust types
+Now allows user to only cull a certain percentage of dust

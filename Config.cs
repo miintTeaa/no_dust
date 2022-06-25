@@ -26,6 +26,7 @@ namespace NoDust {
         public bool PrintLastDust;
 
         [Label("List type")]
+        [DefaultValue(ListConfigSettings.Off)]
         public ListConfigSettings ListSetting;
 
         [Label("Dust list")]

@@ -1,6 +1,7 @@
 using Terraria.ModLoader;
 using MonoMod.Cil;
 using Mono.Cecil.Cil;
+using Terraria;
 using System;
 
 namespace NoDust
@@ -18,7 +19,9 @@ namespace NoDust
 
 			//Pushes value of config on the stack
 			c.EmitDelegate<Func<bool>>(() => {
-				return ModContent.GetInstance<NoDustConfig>().TurnOffDust;
+				var config = ModContent.GetInstance<NoDustConfig>();
+				var should_destroy = Main.rand.NextFloat() * 100 > config.DustDestroyChance;
+				return should_destroy;
 			});
 
 			// Jump to end of if statement if returned boolean value is false

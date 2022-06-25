@@ -1,6 +1,7 @@
 using Terraria.ModLoader.Config;
 using System.ComponentModel;
 using System.Collections.Generic;
+using Terraria.ModLoader.Config.UI;
 
 namespace NoDust {
     public enum ListConfigSettings { 
@@ -21,6 +22,10 @@ namespace NoDust {
         [Increment(1)]
         [Slider]
         public int DustDestroyChance;
+    }
+
+    public class NoDustListConfig : ModConfig {
+         public override ConfigScope Mode => ConfigScope.ClientSide;
 
         [Label("Print last dust ID (helps with configuring list)")]
         public bool PrintLastDust;

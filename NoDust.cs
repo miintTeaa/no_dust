@@ -23,6 +23,7 @@ namespace NoDust
 			// Pushes value of config on the stack
 			c.EmitDelegate<Func<int, bool>>((dust_id) => {
 				var config = ModContent.GetInstance<NoDustConfig>();
+				var l_config = ModContent.GetInstance<NoDustListConfig>();
 
 				if (!config.Enabled) {
 					return false;
@@ -30,14 +31,14 @@ namespace NoDust
 
 				var should_destroy = Main.rand.NextFloat() * 100 <= config.DustDestroyChance;
 
-				if (config.ListSetting == ListConfigSettings.Whitelist && config.DustList.Contains(dust_id)) {
+				if (l_config.ListSetting == ListConfigSettings.Whitelist && l_config.DustList.Contains(dust_id)) {
 					should_destroy = false;
 				}
-				else if (config.ListSetting == ListConfigSettings.Blacklist && !config.DustList.Contains(dust_id)) {
+				else if (l_config.ListSetting == ListConfigSettings.Blacklist && !l_config.DustList.Contains(dust_id)) {
 					should_destroy = false;
 				}
 
-				if (!should_destroy && config.PrintLastDust) {
+				if (!should_destroy && l_config.PrintLastDust) {
 					Main.NewText("Last generated dust id:" + dust_id);
 				}
 

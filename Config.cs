@@ -18,7 +18,7 @@ namespace NoDust {
         [Slider]
         public int DustDestroyChance;
 
-        [Label("Print last dust")]
+        [Label("Print last dust ID (helps with configuring list)")]
         public bool PrintLastDust;
 
         [Label("List type")]

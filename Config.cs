@@ -25,6 +25,6 @@ namespace NoDust {
         public ListConfigSettings ListSetting;
 
         [Label("Dust list")]
-        public HashSet<int> DustList;
+        public HashSet<int> DustList = new HashSet<int>();
     }
 }

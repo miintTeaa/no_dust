@@ -1,5 +1,5 @@
 displayName = No Dust
 author = fizkay
-version = 0.2
+version = 0.3
 homepage = https://github.com/miintTeaa/no_dust/tree/master
 side = client
